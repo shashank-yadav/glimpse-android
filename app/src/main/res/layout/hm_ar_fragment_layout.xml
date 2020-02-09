@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/hm_myarfragment_ar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+<!--        <fragment-->
+<!--            android:id="@+id/sceneform_ux_fragment"-->
+<!--            android:name="com.google.ar.sceneform.ux.ArFragment"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"/>-->
+
+<!--        <me.zhanghai.android.materialprogressbar.MaterialProgressBar-->
+<!--            android:id="@+id/material_progress_bar"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:indeterminate="true"-->
+<!--            app:mpb_progressStyle="circular"/>-->
+
+    </FrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/coaching_motion_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/coaching_motion_text"
+            android:textSize="20dp"
+            android:text="@string/hm_coaching_motion_text"
+            android:background="#8888"
+            android:paddingTop="200dp"
+            android:paddingLeft="@dimen/margin_padding_size_large"
+            android:paddingRight="@dimen/margin_padding_size_large"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"/>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/coaching_product_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/coaching_product_text"
+            android:background="@color/colorPrimary"
+            android:textSize="@dimen/text_size_small"
+            android:padding="@dimen/margin_padding_size_small"
+            android:layout_marginTop="@dimen/margin_padding_size_small"
+            android:text="@string/hm_coaching_product_text"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/coaching_fab_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/coaching_fab_text"
+            android:textSize="@dimen/text_size_small"
+            android:padding="@dimen/margin_padding_size_small"
+            android:layout_marginBottom="100dp"
+            android:text="Select a Product"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:gravity="bottom"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_downward_24px"
+            android:layout_marginBottom="80dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:gravity="bottom"/>
+    </RelativeLayout>
+
+
+
+
+    <!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/test_text"-->
+<!--        android:textSize="20dp"-->
+<!--        android:text="Just testing"-->
+<!--        android:layout_gravity="center"/>-->
+
+</FrameLayout>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:mlns="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="horizontal">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context="com.example.homemaker.MainActivity"
+        android:background="@color/loginPageBackgroundColor">
+
+        <FrameLayout
+            android:id="@+id/main_fragment_ar"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_above="@id/InnerRelativeLayout"
+            android:background="@color/loginPageBackgroundColor" >
+<!--            <include layout="@layout/shr_ar_fragment" />-->
+        </FrameLayout>
+
+        <RelativeLayout
+            android:id="@+id/InnerRelativeLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="220dp"
+            android:layout_alignParentBottom="true" >
+
+            <FrameLayout
+                android:id="@+id/main_fragment_product_grid"
+                android:layout_width="fill_parent"
+                android:layout_height="150dp"
+                android:layout_above="@id/main_fragment_product_type"
+                android:background="@color/loginPageBackgroundColor">
+            </FrameLayout>
+            <FrameLayout
+                android:id="@+id/main_fragment_product_type"
+                android:layout_width="fill_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_height="70dp"
+                android:background="@color/loginPageBackgroundColor">
+                <include layout="@layout/just_product_type"/>
+            </FrameLayout>
+        </RelativeLayout>
+
+    </RelativeLayout>
+</LinearLayout>

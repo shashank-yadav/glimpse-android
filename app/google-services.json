@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "210951132012",
+    "firebase_url": "https://homemaker-d95e8.firebaseio.com",
+    "project_id": "homemaker-d95e8",
+    "storage_bucket": "homemaker-d95e8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:210951132012:android:24d33db682354652e31949",
+        "android_client_info": {
+          "package_name": "com.example.homemaker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "210951132012-jkid2554qrfh46opoelbkflqmi11e8q2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdW2ru5c8FJTuNySlTmIqYMoiB2FEm2fM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "210951132012-jkid2554qrfh46opoelbkflqmi11e8q2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

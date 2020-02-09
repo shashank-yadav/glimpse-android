@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="shr_product_grid_reveal_height">200dp</dimen>
+
+    <!-- Dimens for staggered asymmetric grid layout cards-->
+    <dimen name="shr_staggered_product_grid_spacing_large">30dp</dimen>
+    <dimen name="shr_staggered_product_grid_spacing_small">26dp</dimen>
+    <dimen name="shr_staggered_product_grid_margin_top_first">72dp</dimen>
+    <dimen name="shr_staggered_product_grid_margin_top_second">56dp</dimen>
+    <dimen name="shr_staggered_product_grid_margin_top_third">152dp</dimen>
+    <dimen name="shr_staggered_product_grid_card_width_portrait">165dp</dimen>
+    <dimen name="shr_staggered_product_grid_card_height_portrait">247dp</dimen>
+    <dimen name="shr_staggered_product_grid_card_width_landscape">188dp</dimen>
+    <dimen name="shr_staggered_product_grid_card_height_landscape">140dp</dimen>
+
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+
+    <dimen name="hm_product_card_width">164dp</dimen>
+    <dimen name="hm_product_card_image_height">148dp</dimen>
+
+
+    <!-- Margins & Padding, 8 dp baseline, https://material.io/guidelines/layout/metrics-keylines.html#metrics-keylines-baseline-grids -->
+    <dimen name="margin_padding_size_small">8dp</dimen>
+    <dimen name="margin_padding_size_medium">16dp</dimen>
+    <dimen name="margin_padding_size_large">24dp</dimen>
+
+    <!-- Launcher Icon Size, https://developer.android.com/guide/practices/ui_guidelines/icon_design_launcher.html#size -->
+
+    <!-- Touch Target Size, https://material.io/guidelines/layout/metrics-keylines.html#metrics-keylines-touch-target-size-->
+
+    <!-- Toolbar, 4 dp baseline, https://material.io/guidelines/layout/metrics-keylines.html#metrics-keylines-baseline-grids -->
+
+    <!-- Font sizes, https://material.io/guidelines/style/typography.html#typography-typeface -->
+    <dimen name="text_size_small">14sp</dimen>
+
+</resources>
