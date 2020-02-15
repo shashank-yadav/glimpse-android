@@ -1,58 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/hm_product_card"
-    android:layout_width="@dimen/hm_product_card_width"
+    android:id="@+id/hm_store_card_layout"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:clickable="true"
     android:focusable="true"
     android:layout_margin="@dimen/margin_padding_size_medium"
     style="@style/Widget.MaterialComponents.CardView"
-    android:outlineAmbientShadowColor="@color/colorPrimaryDark"
-    android:layout_gravity="center"
     app:cardElevation="@dimen/cardview_default_elevation"
+    app:cardBackgroundColor="@color/white"
     app:cardPreventCornerOverlap="true">
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/hm_product_card_image"
-            android:layout_width="match_parent"
+            android:id="@+id/hm_store_card_image"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
             android:adjustViewBounds="true"
-            android:scaleType="fitXY"
-            android:layout_height="@dimen/hm_product_card_image_height"/>
+            android:scaleType="fitXY"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:padding="@dimen/margin_padding_size_small"
             android:orientation="vertical">
             <TextView
-                android:id="@+id/hm_product_card_title"
+                android:id="@+id/hm_store_card_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/shr_product_title"
-                android:textAlignment="center"
+                android:textAlignment="textStart"
                 android:textAppearance="?attr/textAppearanceSubtitle2" />
 
             <TextView
-                android:id="@+id/hm_product_card_price"
+                android:id="@+id/hm_store_card_desc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/shr_product_description"
-                android:textAlignment="center"
+                android:textAlignment="textStart"
                 android:textAppearance="?attr/textAppearanceBody2" />
         </LinearLayout>
     </LinearLayout>
 
 </com.google.android.material.card.MaterialCardView>
-</LinearLayout>

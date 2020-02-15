@@ -30,7 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="80dp"
+            android:layout_marginBottom="64dp"
             android:text="@string/shr_app_name"
             android:textAppearance="@style/TextAppearance.Shrine.Title" />
 
@@ -38,37 +38,45 @@
             style="@style/Widget.Shrine.TextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/hm_hint_phone_otp">
+            android:hint="First Name">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/login_phone_otp"
+                android:id="@+id/login_firstname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="phone"
+                android:inputType="text"
                 android:maxLines="1"
-                android:maxLength="6"/>
+                android:maxLength="15"/>
         </com.google.android.material.textfield.TextInputLayout>
 
-<!--        <TextView-->
-<!--            android:id="@+id/resend_otp"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_gravity="left"-->
-<!--            android:text="Resend otp"-->
-<!--            android:textAppearance="@style/TextAppearance.AppCompat.Small" />-->
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.Shrine.TextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Last Name">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/login_lastname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:maxLines="1"
+                android:maxLength="15"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_padding_size_medium">
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/login_phone_otp_button"
+                android:id="@+id/username_continue_button"
                 style="@style/Widget.Shrine.Button"
                 android:layout_centerHorizontal="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/hm_phone_otp_signin_button" />
+                android:text="Continue" />
 
         </RelativeLayout>
     </LinearLayout>

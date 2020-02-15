@@ -5,6 +5,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <uses-feature
         android:name="android.hardware.camera.ar"
@@ -12,24 +14,25 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_glimpse_launcher"
         android:label="@string/shr_app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_glimpse_launcher_round"
         android:supportsRtl="true"
         android:name="com.example.homemaker.application.ShrineApplication"
         android:theme="@style/Theme.Shrine">
-
 
         <meta-data
             android:name="com.google.ar.core"
             android:value="required" />
 
-        <activity android:name="com.example.homemaker.MainActivity">
+        <activity android:name="com.example.homemaker.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".MainActivity"></activity>
     </application>
 </manifest>

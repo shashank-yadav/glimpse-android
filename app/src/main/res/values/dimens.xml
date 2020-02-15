@@ -20,8 +20,8 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
 
 
-    <dimen name="hm_product_card_width">164dp</dimen>
-    <dimen name="hm_product_card_image_height">148dp</dimen>
+    <dimen name="hm_product_card_width">144dp</dimen>
+    <dimen name="hm_product_card_image_height">104dp</dimen>
 
 
     <!-- Margins & Padding, 8 dp baseline, https://material.io/guidelines/layout/metrics-keylines.html#metrics-keylines-baseline-grids -->

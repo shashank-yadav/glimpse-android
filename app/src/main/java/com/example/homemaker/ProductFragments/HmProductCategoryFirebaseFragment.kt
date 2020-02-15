@@ -24,6 +24,7 @@ import com.firebase.ui.firestore.paging.LoadingState
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 import kotlinx.android.synthetic.main.hm_product_fragment_layout2.*
+import kotlinx.android.synthetic.main.hm_stores_fragment_layout.view.*
 
 class HmProductCategoryFirebaseFragment(store: Store, productCategory: String) : Fragment(){
     private lateinit var mAdapter: FirestorePagingAdapter<Product, HmProductViewHolder>
@@ -42,13 +43,17 @@ class HmProductCategoryFirebaseFragment(store: Store, productCategory: String) :
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.hm_product_fragment_layout2, container, false)
+        view.swipeRefreshLayout.setOnRefreshListener {
+            mAdapter.refresh()
+        }
         recyclerView = view.findViewById(R.id.hm_bottomsheet_recyclerview_allitems)
         viewModel = ViewModelProviders.of(this.activity!!).get(StateViewModel::class.java)
 
         val gridLayoutManager = GridLayoutManager(context, 2, RecyclerView.VERTICAL, false)
         recyclerView.layoutManager = gridLayoutManager
 
-        parent = this.parentFragment!!.parentFragment as HmFragmentManager
+//        parent = this.parentFragment!!.parentFragment as HmFragmentManager
+        parent = this.parentFragment!!.parentFragment!!.parentFragment as HmFragmentManager
         setupAdapter()
         return view
     }
@@ -87,7 +92,7 @@ class HmProductCategoryFirebaseFragment(store: Store, productCategory: String) :
             override fun onBindViewHolder(viewHolder: HmProductViewHolder, position: Int, product: Product) {
                 // Bind to ViewHolder
                 viewHolder.bind(product)
-                viewHolder.image.setOnClickListener {
+                viewHolder.card.setOnClickListener {
                     viewModel.state.productSelected = product
                     parent.changeView()
                 }

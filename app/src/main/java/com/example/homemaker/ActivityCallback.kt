@@ -6,6 +6,7 @@ package com.example.homemaker
  */
 interface ActivityCallback {
     fun openChat()
+    fun openUsername()
     fun openCreateAccount()
     fun logout()
     fun setPhoneNumber(phoneNumber:String)

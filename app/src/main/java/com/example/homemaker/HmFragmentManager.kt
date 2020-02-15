@@ -14,6 +14,7 @@ import com.example.homemaker.ProductFragments.MyPagerAdapter
 import com.example.homemaker.ProductFragments.ProductTabAdapter
 import com.example.homemaker.ViewPagerAnimations.PopTransformation
 import com.example.homemaker.Objects.Store
+import com.example.homemaker.StoreFragments.HmStoresViewFragment
 import com.google.android.material.chip.ChipGroup
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.tabs.TabLayout
@@ -27,7 +28,7 @@ class HmFragmentManager : Fragment(){
 
 
     private lateinit var arFragment: HmArFragment
-    private lateinit var childFragment: HmProductFragment
+    private lateinit var childFragment: HmContainerFragment
     private lateinit var fragmentStateHelper: FragmentStateHelper
     private lateinit var vpager:ViewPager
 
@@ -39,30 +40,30 @@ class HmFragmentManager : Fragment(){
 
         val view = inflater.inflate(R.layout.hm_mainlayout, container, false)
         arFragment = HmArFragment()
-        childFragment = HmProductFragment()
+        childFragment = HmContainerFragment()
         fragmentStateHelper = FragmentStateHelper(childFragmentManager)
 
         // setup viewpager for AR and product screen
         vpager = view.hm_vpager
         val adapter = MyPagerAdapter(childFragmentManager)
-        adapter.addFragment(arFragment, "arFragment")
         adapter.addFragment(childFragment, "childFragment")
+        adapter.addFragment(arFragment, "arFragment")
         vpager.adapter = adapter
         vpager.setPageTransformer(true, PopTransformation())
 
         // setup fab
-        val floatingActionButton = view.findViewById(R.id.floating_action_button) as FloatingActionButton
-        floatingActionButton.setOnClickListener(
-                fun(view: View?) { // Handle the click.
-                    vpager.currentItem =  (vpager.currentItem + 1)%2
-                    Log.e("Debug", vpager.currentItem.toString())
-                }
-        )
+//        val floatingActionButton = view.findViewById(R.id.floating_action_button) as FloatingActionButton
+//        floatingActionButton.setOnClickListener(
+//                fun(view: View?) { // Handle the click.
+//                    vpager.currentItem =  (vpager.currentItem + 1)%2
+//                    Log.e("Debug", vpager.currentItem.toString())
+//                }
+//        )
 
         return view
     }
 
-    public fun changeView(){
+    fun changeView(){
         vpager.currentItem =  (vpager.currentItem + 1)%2
     }
 

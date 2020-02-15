@@ -4,15 +4,15 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floating_action_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|center"
-        android:layout_margin="@dimen/margin_padding_size_medium"
-        app:borderWidth="0dp"
-        app:backgroundTint="@color/colorPrimaryDark"
-        app:srcCompat="@drawable/shr_logo"/>
+<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--        android:id="@+id/floating_action_button"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="bottom|center"-->
+<!--        android:layout_margin="@dimen/margin_padding_size_medium"-->
+<!--        app:borderWidth="0dp"-->
+<!--        app:backgroundTint="@color/colorPrimaryDark"-->
+<!--        app:srcCompat="@drawable/shr_logo"/>-->
 
     <FrameLayout
         android:id="@+id/hm_ar_layout"

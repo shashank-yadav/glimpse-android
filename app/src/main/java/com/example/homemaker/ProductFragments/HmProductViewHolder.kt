@@ -13,6 +13,7 @@ import com.example.homemaker.Objects.GlideApp
 import com.example.homemaker.Objects.MyAppGlideModule
 import com.example.homemaker.R
 import com.example.homemaker.Objects.Product
+import com.google.android.material.card.MaterialCardView
 import com.google.firebase.storage.FirebaseStorage
 import java.text.NumberFormat
 import java.util.*
@@ -24,6 +25,7 @@ class HmProductViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     var name: TextView = itemView.findViewById(R.id.hm_product_card_title)
     var price: TextView = itemView.findViewById(R.id.hm_product_card_price)
     val image: ImageView = itemView.findViewById(R.id.hm_product_card_image)
+    val card: MaterialCardView = itemView.findViewById(R.id.hm_product_card)
 
     fun bind(product: Product){
         name.text = product.name

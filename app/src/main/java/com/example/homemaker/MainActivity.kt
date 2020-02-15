@@ -1,10 +1,14 @@
 package com.example.homemaker
 
+import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.homemaker.LoginFragments.PhoneLoginFragment
 import com.example.homemaker.LoginFragments.PhoneVerificationFragment
+import com.example.homemaker.LoginFragments.UsernameFragment
+import com.example.homemaker.StoreFragments.HmStoresViewFragment
 import com.google.ar.sceneform.ux.ArFragment
 import com.google.firebase.auth.FirebaseAuth
 
@@ -18,15 +22,10 @@ class MainActivity : AppCompatActivity(), ActivityCallback{
         super.onCreate(savedInstanceState)
         setContentView(R.layout.hm_main_activity)
 
-
         val mauth = FirebaseAuth.getInstance();
 
-        if (mauth.getCurrentUser() != null) {
+        if (mauth.currentUser != null) {
             openChat()
-            // User is signed in (getCurrentUser() will be null if not signed in)
-//            supportFragmentManager.beginTransaction()
-//                    .add(R.id.container, PhoneLoginFragment())
-//                    .commit()
         }else{
 //            openChat()
             supportFragmentManager.beginTransaction()
@@ -94,6 +93,11 @@ class MainActivity : AppCompatActivity(), ActivityCallback{
 
     public override fun openChat(){
         replaceFragment(HmFragmentManager())
+//        replaceFragment(HmStoresViewFragment())
+    }
+
+    override fun openUsername(){
+        replaceFragment(UsernameFragment())
     }
 
 
