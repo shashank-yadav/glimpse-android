@@ -1,97 +1,158 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
     android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Profile"
-            android:background="@color/colorAccent"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:padding="@dimen/margin_padding_size_small"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"/>
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Profile"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="@dimen/margin_padding_size_large"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/colorBackgroundPrimary"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/margin_padding_size_large"
+                android:background="?android:attr/selectableItemBackground">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_zep_profile"
+                    android:layout_gravity="center_vertical"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/margin_padding_size_medium">
+                    <TextView
+                        android:id="@+id/profile_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Firstname Lastname"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"/>
+
+                    <TextView
+                        android:id="@+id/profile_phone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Phone"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"/>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/colorBackgroundPrimary"/>
+
+            <LinearLayout
+                android:id="@+id/profile_explore_public_stores_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/margin_padding_size_large"
+                android:background="?android:attr/selectableItemBackground">
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_store_outlined_24px"
+                    android:layout_gravity="center_vertical"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="Explore Other Stores"
+                    android:layout_marginStart="@dimen/margin_padding_size_medium"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"/>
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/colorBackgroundPrimary"/>
+
+            <LinearLayout
+                android:id="@+id/profile_contact_us_email_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="@dimen/margin_padding_size_large"
+                android:background="?android:attr/selectableItemBackground">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_email_outline_24px"
+                    android:layout_gravity="center_vertical"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="Contact Us"
+                    android:layout_marginStart="@dimen/margin_padding_size_medium"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"/>
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/colorBackgroundPrimary"/>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/profile_sign_out_button"
+                android:layout_width="144dp"
+                android:layout_height="44dp"
+                android:layout_marginTop="@dimen/margin_padding_size_large"
+                android:layout_marginStart="@dimen/margin_padding_size_large"
+                android:layout_marginEnd="@dimen/margin_padding_size_large"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:textAllCaps="false"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+                android:textColor="@color/textColorSecondary"
+                android:radius="32dp"
+                android:text="Sign Out"
+                app:cornerRadius="16dp"/>
+
+        </LinearLayout>
 
         <ImageView
             android:id="@+id/profile_close"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_close_24px"
-            android:padding="@dimen/margin_padding_size_small"
+            android:padding="@dimen/margin_padding_size_large"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="64dp"
-            android:layout_marginBottom="48dp"
-            android:layout_marginRight="48dp"
-            android:layout_marginLeft="48dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="First name"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"/>
-
-            <TextView
-                android:id="@+id/profile_firstName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_padding_size_small"
-                android:text="name"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_padding_size_medium"
-                android:text="Last Name"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption" />
-
-            <TextView
-                android:id="@+id/profile_lastName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_padding_size_small"
-                android:text="surname"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_padding_size_medium"
-                android:text="Phone"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption" />
-
-            <TextView
-                android:id="@+id/profile_phone"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_padding_size_small"
-                android:text="surname"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
-
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/profile_logout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_padding_size_large"
-                android:text="Logout"
-                style="@style/Widget.Shrine.Button"
-                android:layout_gravity="center"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"/>
-
-        </LinearLayout>
     </RelativeLayout>
 </FrameLayout>

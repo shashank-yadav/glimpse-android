@@ -13,6 +13,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.paging.PagedList
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.homemaker.Helpers.AnalyticsHelper
 import com.example.homemaker.HmFragmentManager
 import com.example.homemaker.MainActivity
 import com.example.homemaker.Objects.Product
@@ -21,13 +22,15 @@ import com.example.homemaker.Objects.Store
 import com.example.homemaker.ProductFragments.HmProductFragment
 import com.example.homemaker.ProductFragments.HmProductViewHolder
 import com.example.homemaker.R
+import com.example.homemaker.factoryMethods.HmProductFragmentFactory
 import com.firebase.ui.firestore.paging.FirestorePagingAdapter
 import com.firebase.ui.firestore.paging.FirestorePagingOptions
 import com.firebase.ui.firestore.paging.LoadingState
+import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
-import kotlinx.android.synthetic.main.hm_product_fragment_layout2.*
+import kotlinx.android.synthetic.main.hm_product_fragment_layout.*
 import kotlinx.android.synthetic.main.hm_stores_fragment_layout.view.*
 import kotlinx.android.synthetic.main.profile_dialog_layout.*
 
@@ -35,7 +38,7 @@ class HmStoresViewFragment: Fragment(){
 
     private lateinit var mAdapter: FirestorePagingAdapter<Store, HmStoreViewHolder>
     private lateinit var recyclerView: RecyclerView
-    private lateinit var parent: HmFragmentManager
+    private lateinit var analyticsHelper: AnalyticsHelper
 
     private val mFirestore = FirebaseFirestore.getInstance()
     private val mObjectsCollection = mFirestore.collection("store")
@@ -47,37 +50,17 @@ class HmStoresViewFragment: Fragment(){
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
         val view = inflater.inflate(R.layout.hm_stores_fragment_layout, container, false)
+        analyticsHelper = AnalyticsHelper(this.context!!)
+
         view.swipeRefreshLayout.setOnRefreshListener {
             mAdapter.refresh()
         }
-        recyclerView = view.findViewById(R.id.hm_stores_recyclerview)
 
+        recyclerView = view.findViewById(R.id.hm_stores_recyclerview)
         viewModel = ViewModelProviders.of(this.activity!!).get(StateViewModel::class.java)
 
         val gridLayoutManager = GridLayoutManager(context, 1, RecyclerView.VERTICAL, false)
         recyclerView.layoutManager = gridLayoutManager
-
-
-        val user = FirebaseAuth.getInstance().currentUser
-        val docRef= FirebaseFirestore.getInstance().collection("users").document(user!!.uid)
-        docRef.addSnapshotListener { snapshot, e ->
-            if (e != null) {
-                Log.w("store", "Listen failed.", e)
-                return@addSnapshotListener
-            }
-
-            if (snapshot != null && snapshot.exists()) {
-                Log.d("store", "Current data: ${snapshot.data}")
-                val firstName = snapshot.data!!["firstName"]!!.toString()
-                view.store_username.text = "$firstName"
-            } else {
-                Log.d("store", "Current data: null")
-            }
-        }
-
-        view.store_account_icon.setOnClickListener {
-            showDialog()
-        }
 
 //        parent = this.parentFragment!!.parentFragment as HmFragmentManager
         setupAdapter()
@@ -85,55 +68,6 @@ class HmStoresViewFragment: Fragment(){
 
 //        return super.onCreateView(inflater, container, savedInstanceState)
 
-    }
-
-    private fun showDialog() {
-        val dialog = Dialog(this.context!!)
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
-//        dialog.setCancelable(false)
-        dialog.setContentView(R.layout.profile_dialog_layout)
-
-        val firstNameTextView = dialog.profile_firstName
-        val lastNameTextView = dialog.profile_lastName
-        val phoneNumberTextView = dialog.profile_phone
-
-        val user = FirebaseAuth.getInstance().currentUser
-        phoneNumberTextView.text = user!!.phoneNumber
-
-        val docRef= FirebaseFirestore.getInstance().collection("users").document(user!!.uid)
-        docRef.addSnapshotListener { snapshot, e ->
-            if (e != null) {
-                Log.w("store", "Listen failed.", e)
-                return@addSnapshotListener
-            }
-
-            if (snapshot != null && snapshot.exists()) {
-                Log.d("store", "Current data: ${snapshot.data}")
-
-                val data = snapshot.data!!
-                val firstName = data["firstName"]!!.toString()
-                firstNameTextView.text = firstName
-
-                val lastName = data["lastName"]!!.toString()
-                lastNameTextView.text = lastName
-            } else {
-                Log.d("store", "Current data: null")
-            }
-        }
-
-        dialog.profile_logout.setOnClickListener {
-//            dialog.dismiss()
-            val parentActivity = this.context as MainActivity
-            FirebaseAuth.getInstance().signOut()
-            parentActivity.openPhoneLogin()
-            dialog.dismiss()
-        }
-
-        dialog.profile_close.setOnClickListener {
-            dialog.dismiss()
-        }
-
-        dialog.show()
     }
 
     private fun setupAdapter(){
@@ -166,7 +100,8 @@ class HmStoresViewFragment: Fragment(){
                     // go to new fragment here
 //                    val parent = parentFragment
 //                    parentFragment!!.childFragmentManager.beginTransaction().replace(R.id.container_fragment_framelayout, HmProductFragment(store)).commit()
-                    fragmentManager!!.beginTransaction().replace(R.id.container_fragment_framelayout, HmProductFragment(store)).addToBackStack("").commit()
+                    analyticsHelper.logSelectContent("selectStore", store.id!!, "Card")
+                    fragmentManager!!.beginTransaction().replace(R.id.container_fragment_framelayout, HmProductFragmentFactory.newInstance(store)).addToBackStack("").commit()
                     viewModel.state.storeSelected = store
 //                    Toast.makeText(viewHolder.card
 //                            .context, "inside viewholder position = ", Toast.LENGTH_SHORT).show()

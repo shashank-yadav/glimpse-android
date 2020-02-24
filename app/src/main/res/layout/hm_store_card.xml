@@ -19,14 +19,14 @@
 
         <ImageView
             android:id="@+id/hm_store_card_image"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:adjustViewBounds="true"
             android:scaleType="fitXY"/>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:padding="@dimen/margin_padding_size_small"
             android:orientation="vertical">
             <TextView
@@ -35,7 +35,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/shr_product_title"
                 android:textAlignment="textStart"
-                android:textAppearance="?attr/textAppearanceSubtitle2" />
+                android:textAppearance="?attr/textAppearanceSubtitle1" />
 
             <TextView
                 android:id="@+id/hm_store_card_desc"
@@ -43,8 +43,21 @@
                 android:layout_height="wrap_content"
                 android:text="@string/shr_product_description"
                 android:textAlignment="textStart"
-                android:textAppearance="?attr/textAppearanceBody2" />
+                android:textAppearance="?attr/textAppearanceSubtitle2" />
         </LinearLayout>
     </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_keyboard_arrow_right_24px"
+            android:tint="@android:color/darker_gray"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/margin_padding_size_small"/>
+    </RelativeLayout>
 
 </com.google.android.material.card.MaterialCardView>

@@ -23,12 +23,14 @@ class HmProductViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
 //        var image: ImageView = itemView.findViewById(R.id.hm_product_card_image)
     var name: TextView = itemView.findViewById(R.id.hm_product_card_title)
+    var desc: TextView = itemView.findViewById(R.id.hm_product_card_desc)
     var price: TextView = itemView.findViewById(R.id.hm_product_card_price)
     val image: ImageView = itemView.findViewById(R.id.hm_product_card_image)
     val card: MaterialCardView = itemView.findViewById(R.id.hm_product_card)
 
     fun bind(product: Product){
         name.text = product.name
+        desc.text = product.desc
         val num = product.price.toInt()
         val formattedNum = NumberFormat.getNumberInstance(Locale.ENGLISH).format(num)
         price.text = itemView.context.resources.getString(R.string.Rs) + " "+ formattedNum

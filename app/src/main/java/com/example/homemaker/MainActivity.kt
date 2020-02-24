@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import com.example.homemaker.LoginFragments.PhoneLoginFragment
 import com.example.homemaker.LoginFragments.PhoneVerificationFragment
 import com.example.homemaker.LoginFragments.UsernameFragment
@@ -92,7 +93,8 @@ class MainActivity : AppCompatActivity(), ActivityCallback{
 
 
     public override fun openChat(){
-        replaceFragment(HmFragmentManager())
+        supportFragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
+        replaceFragmentWithoutStack(HmFragmentManager())
 //        replaceFragment(HmStoresViewFragment())
     }
 
@@ -134,6 +136,14 @@ class MainActivity : AppCompatActivity(), ActivityCallback{
     }
 
     private fun replaceFragment(fragment: Fragment) {
+        supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.container, fragment)
+                .addToBackStack(null)
+                .commit()
+    }
+
+    private fun replaceFragmentWithoutStack(fragment: Fragment) {
         supportFragmentManager
                 .beginTransaction()
                 .replace(R.id.container, fragment)

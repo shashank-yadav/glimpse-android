@@ -5,7 +5,8 @@ class Product(
     val price: Long = 0,
     val id: String = "",
     val category: String = "",
-    val storeId: String = ""
+    val storeId: String = "",
+    val desc: String = ""
 ){
 
     fun getImgUrl(): String {

@@ -1,68 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/loginPageBackgroundColor"
-    tools:context="com.example.homemaker.LoginFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/loginPageBackgroundColor">
 
-    <LinearLayout
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:clipChildren="false"
-        android:clipToPadding="false"
-        android:orientation="vertical"
-        android:padding="24dp"
-        android:paddingTop="16dp">
+        android:text="Login"
+        android:textColor="@color/textColorSecondary"
+        android:layout_marginTop="@dimen/margin_padding_size_large"
+        android:layout_marginStart="@dimen/margin_padding_size_large"
+        android:layout_marginEnd="@dimen/margin_padding_size_large"
+        android:textAllCaps="false"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"/>
 
-        <ImageView
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="48dp"
-            android:layout_marginBottom="16dp"
-            android:tint="?android:attr/textColorPrimary"
-            app:srcCompat="@drawable/shr_logo"
-            android:contentDescription="@string/shr_logo_content_description"  />
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.Shrine.TextInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_padding_size_large"
+        android:layout_marginEnd="@dimen/margin_padding_size_large"
+        android:layout_marginTop="200dp"
+        android:hint="@string/hm_hint_phone_number">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="80dp"
-            android:text="@string/shr_app_name"
-            android:textAppearance="@style/TextAppearance.Shrine.Title" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.Shrine.TextInputLayout"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/login_phone_number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/hm_hint_phone_number">
+            android:inputType="phone"
+            android:maxLines="1"
+            android:drawableStart="@drawable/ic_phone_material"
+            android:drawablePadding="10dp"
+            android:maxLength="10"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/login_phone_number"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="phone"
-                android:maxLines="1"
-                android:drawableStart="@drawable/ic_phone_material"
-                android:drawablePadding="10dp"
-                android:maxLength="10"/>
-        </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/login_phone_button"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginStart="@dimen/margin_padding_size_large"
+        android:layout_marginEnd="@dimen/margin_padding_size_large"
+        android:layout_marginTop="320dp"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:textAllCaps="false"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+        android:textColor="@color/textColorSecondary"
+        android:radius="32dp"
+        android:text="Login"
+        app:cornerRadius="16dp"/>
+</RelativeLayout>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/login_phone_button"
-                style="@style/Widget.Shrine.Button"
-                android:layout_centerHorizontal="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/hm_phone_number_continue_button" />
-
-        </RelativeLayout>
-    </LinearLayout>
-</ScrollView>

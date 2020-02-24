@@ -10,39 +10,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="@dimen/margin_padding_size_medium"
-        android:background="@color/colorPrimaryDark"
+        android:elevation="@dimen/cardview_default_elevation"
+        android:background="#fefcf8"
         android:orientation="horizontal">
         <TextView
             android:id="@+id/hm_store_card_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Select a store"
-            android:layout_alignParentLeft="true"
-            android:textAlignment="textStart"
+            android:textAlignment="center"
+            android:layout_margin="@dimen/margin_padding_size_small"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
             android:textAppearance="?attr/textAppearanceHeadline6" />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:orientation="horizontal">
-            <TextView
-                android:id="@+id/store_username"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Username"
-                android:layout_gravity="center"
-                android:layout_marginRight="@dimen/margin_padding_size_small"
-                android:textAppearance="?attr/textAppearanceSubtitle1" />
-
-            <ImageView
-                android:id="@+id/store_account_icon"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:src="@drawable/ic_account_circle_24px"
-                android:layout_gravity="right"/>
-
-        </LinearLayout>
 
         </RelativeLayout>
 
@@ -50,7 +30,7 @@
         android:id="@+id/swipeRefreshLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="@dimen/margin_padding_size_small"
         android:elevation="0dp">
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/hm_stores_recyclerview"

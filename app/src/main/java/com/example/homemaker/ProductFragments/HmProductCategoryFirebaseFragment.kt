@@ -13,27 +13,32 @@ import androidx.paging.PagedList
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.homemaker.*
-import com.example.homemaker.Objects.Employee
+import com.example.homemaker.Helpers.AnalyticsHelper
 import com.example.homemaker.Objects.Product
 import com.example.homemaker.Objects.StateViewModel
 import com.example.homemaker.Objects.Store
-import com.example.homemaker.network.ProductEntryEmployee
 import com.firebase.ui.firestore.paging.FirestorePagingAdapter
 import com.firebase.ui.firestore.paging.FirestorePagingOptions
 import com.firebase.ui.firestore.paging.LoadingState
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
-import kotlinx.android.synthetic.main.hm_product_fragment_layout2.*
+import kotlinx.android.synthetic.main.hm_product_fragment_layout.*
 import kotlinx.android.synthetic.main.hm_stores_fragment_layout.view.*
 
-class HmProductCategoryFirebaseFragment(store: Store, productCategory: String) : Fragment(){
+class HmProductCategoryFirebaseFragment : Fragment(){
+
+    private lateinit var store: Store //= arguments!!.getSerializable("store") as Store
+    private lateinit var productCategory: String //= arguments!!.getSerializable("productCategory") as String
+
     private lateinit var mAdapter: FirestorePagingAdapter<Product, HmProductViewHolder>
     private lateinit var recyclerView: RecyclerView
     private lateinit var parent: HmFragmentManager
+    private lateinit var analyticsHelper: AnalyticsHelper
 
     private val mFirestore = FirebaseFirestore.getInstance()
-    private val mObjectsCollection = mFirestore.collection("items").document(store.id.toString()).collection(productCategory)
-    private val mQuery = mObjectsCollection.orderBy("price", Query.Direction.ASCENDING)
+//    private val mObjectsCollection = mFirestore.collection("items").document(store.id.toString()).collection(productCategory)
+//    private val mQuery = mObjectsCollection.orderBy("price", Query.Direction.ASCENDING)
+    private lateinit var mQuery: Query
 
 
 
@@ -42,7 +47,9 @@ class HmProductCategoryFirebaseFragment(store: Store, productCategory: String) :
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.hm_product_fragment_layout2, container, false)
+        val view = inflater.inflate(R.layout.hm_product_fragment_layout, container, false)
+        analyticsHelper = AnalyticsHelper(this.context!!)
+
         view.swipeRefreshLayout.setOnRefreshListener {
             mAdapter.refresh()
         }
@@ -61,6 +68,10 @@ class HmProductCategoryFirebaseFragment(store: Store, productCategory: String) :
     override fun onAttach(context: Context) {
         super.onAttach(context)
         mCallback = context as ActivityCallback
+        store = arguments!!.getSerializable("store") as Store
+        productCategory = arguments!!.getSerializable("productCategory") as String
+        val mObjectsCollection = mFirestore.collection("items").document(store.id.toString()).collection(productCategory)
+        mQuery = mObjectsCollection.orderBy("price", Query.Direction.ASCENDING)
     }
 
     override fun onDetach() {
@@ -93,6 +104,7 @@ class HmProductCategoryFirebaseFragment(store: Store, productCategory: String) :
                 // Bind to ViewHolder
                 viewHolder.bind(product)
                 viewHolder.card.setOnClickListener {
+                    analyticsHelper.logSelectContent("selectProduct", product.storeId+"_"+product.id, "Card")
                     viewModel.state.productSelected = product
                     parent.changeView()
                 }

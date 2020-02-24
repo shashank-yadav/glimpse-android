@@ -12,7 +12,7 @@
 
     <style name="Widget.Shrine.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="hintTextAppearance">@style/TextAppearance.Shrine.TextInputLayout.HintText</item>
-        <item name="hintTextColor">@color/textColorPrimary</item>
+        <item name="hintTextColor">@color/textColorSecondary</item>
         <item name="android:paddingBottom">8dp</item>
         <item name="boxStrokeColor">@color/textInputOutlineColor</item>
     </style>
@@ -23,7 +23,7 @@
 
     <style name="Widget.Shrine.Button" parent="Widget.MaterialComponents.Button">
         <item name="android:textColor">?android:attr/textColorPrimary</item>
-        <item name="backgroundTint">?attr/colorAccent</item>
+        <item name="backgroundTint">?attr/colorPrimaryDark</item>
         <item name="android:stateListAnimator" tools:ignore="NewApi">
             @animator/shr_next_button_state_list_anim
         </item>
@@ -41,11 +41,13 @@
 
 
     <style name="Widget.Homemaker.Tablayout.Colored" parent="Widget.MaterialComponents.TabLayout.Colored">
-        <item name="android:background">@color/colorPrimaryDark</item>
-        <item name="tabIndicatorColor">@color/textColorPrimary</item>
-        <item name="tabTextColor">@color/textColorPrimary</item>
-        <item name="tabIconTint">@color/textColorPrimary</item>
-        <item name="tabRippleColor">@color/textColorPrimary</item>
+        <item name="android:background">@color/white</item>
+        <item name="tabIndicatorColor">@color/colorPrimaryDark2</item>
+        <item name="tabTextColor">@color/textColorSecondary</item>
+        <item name="tabIconTint">@color/grey</item>
+        <item name="tabRippleColor">@color/colorPrimaryDark</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:textAllCaps">false</item>
     </style>
 
 </resources>

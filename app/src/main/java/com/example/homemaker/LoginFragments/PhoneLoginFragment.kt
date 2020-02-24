@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.homemaker.ActivityCallback
 import com.example.homemaker.R
+import com.google.android.gms.measurement.module.Analytics
+import com.google.firebase.analytics.FirebaseAnalytics
 import kotlinx.android.synthetic.main.hm_phone_login.view.*
 
 class PhoneLoginFragment : Fragment(){

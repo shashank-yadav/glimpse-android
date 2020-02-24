@@ -5,6 +5,7 @@
 <!--    <color name="colorPrimaryDark">#FBB8AC</color>-->
 <!--    <color name="colorPrimaryDark">#FEE8DB</color>-->
     <color name="colorPrimaryDark">#EFE1D4</color>
+    <color name="colorPrimaryDark2">#d89d4d</color>
 <!--    <color name="colorAccent">#FEDBD0</color>-->
 <!--    <color name="colorAccent">#EFE1D4</color>-->
     <color name="colorAccent">#FEE8DB</color>
@@ -12,13 +13,19 @@
     <color name="colorOnPrimary">#442C2E</color>
 
     <color name="textColorPrimary">#442C2E</color>
+<!--    <color name="textColorSecondary">#1c0a41</color>-->
+    <color name="textColorSecondary">#000000</color>
     <color name="toolbarIconColor">@color/textColorPrimary</color>
     <color name="loginPageBackgroundColor">#FFFFFF</color>
     <color name="productGridBackgroundColor">#FFFFFF</color>
 <!--    <color name="textInputOutlineColor">#FBB8AC</color>-->
-    <color name="textInputOutlineColor">#EFE1D4</color>
+    <color name="textInputOutlineColor">@color/textColorSecondary</color>
 
     <color name="splashScreenBackground">#EFE1D4</color>
     <color name="semiTransparentBlack">#4D442C2E</color>
+
+
+    <!--  One off colors  -->
+    <color name="colorBackgroundPrimary">#f7f9fc</color>
 
 </resources>

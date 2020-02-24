@@ -20,14 +20,20 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
 
 
-    <dimen name="hm_product_card_width">144dp</dimen>
-    <dimen name="hm_product_card_image_height">104dp</dimen>
+    <dimen name="hm_product_card_width">172dp</dimen>
+    <dimen name="hm_product_card_image_height">156dp</dimen>
 
 
     <!-- Margins & Padding, 8 dp baseline, https://material.io/guidelines/layout/metrics-keylines.html#metrics-keylines-baseline-grids -->
     <dimen name="margin_padding_size_small">8dp</dimen>
     <dimen name="margin_padding_size_medium">16dp</dimen>
     <dimen name="margin_padding_size_large">24dp</dimen>
+
+
+    <!-- Fab size on the AR screen    -->
+    <dimen name="fab_size_ar">44dp</dimen>
+    <dimen name="margin_padding_bottom_fabs">40dp</dimen>
+    <dimen name="margin_padding_bottom_button">40dp</dimen>
 
     <!-- Launcher Icon Size, https://developer.android.com/guide/practices/ui_guidelines/icon_design_launcher.html#size -->
 

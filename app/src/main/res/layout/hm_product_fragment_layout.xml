@@ -4,20 +4,17 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
-    <androidx.core.widget.NestedScrollView
-        android:id="@+id/hm_bottomsheet_nestedscroll_allitems"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/productGridBackgroundColor"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
+        android:background="@color/colorBackgroundPrimary"
+        android:elevation="0dp">
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/hm_bottomsheet_recyclerview_allitems"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:clipToPadding="false"
-            android:paddingTop="80dp"
             android:nestedScrollingEnabled="false"
             android:layout_gravity="center_horizontal"/>
-    </androidx.core.widget.NestedScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 </LinearLayout>

@@ -42,6 +42,8 @@
             android:paddingRight="@dimen/margin_padding_size_large"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
+            android:textColor="@color/textColorSecondary"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
             android:gravity="center"/>
     </RelativeLayout>
 
@@ -54,49 +56,37 @@
         />
 
 
-    <RelativeLayout
-        android:id="@+id/selected_product_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+<!--    <RelativeLayout-->
+<!--        android:id="@+id/selected_product_view"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent">-->
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_margin="@dimen/margin_padding_size_medium"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_padding_size_medium"
-                android:text="Tap on plane to Add"
-                android:elevation="2dp"
-                android:textAppearance="?attr/textAppearanceSubtitle1"
-                android:layout_gravity="center"/>
-
-            <ImageView
-                android:layout_width="108dp"
-                android:layout_height="64dp"
-                android:id="@+id/selected_product_image"
-                android:layout_marginTop="@dimen/margin_padding_size_medium"
-                android:layout_gravity="center"/>
-
-        </LinearLayout>
-
-<!--        <TextView-->
+<!--        <LinearLayout-->
 <!--            android:layout_width="wrap_content"-->
 <!--            android:layout_height="wrap_content"-->
-<!--            android:id="@+id/coaching_product_text"-->
-<!--            android:background="@color/colorPrimary"-->
-<!--            android:textSize="@dimen/text_size_small"-->
-<!--            android:padding="@dimen/margin_padding_size_small"-->
-<!--            android:layout_marginTop="@dimen/margin_padding_size_small"-->
-<!--            android:text="@string/hm_coaching_product_text"-->
+<!--            android:layout_alignParentBottom="true"-->
 <!--            android:layout_centerHorizontal="true"-->
-<!--            android:gravity="center_horizontal"/>-->
-    </RelativeLayout>
+<!--            android:layout_margin="@dimen/margin_padding_size_medium"-->
+<!--            android:orientation="vertical">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="@dimen/margin_padding_size_medium"-->
+<!--                android:text="Tap on plane to Add"-->
+<!--                android:elevation="2dp"-->
+<!--                android:textAppearance="?attr/textAppearanceSubtitle1"-->
+<!--                android:layout_gravity="center"/>-->
+
+<!--            <ImageView-->
+<!--                android:layout_width="108dp"-->
+<!--                android:layout_height="64dp"-->
+<!--                android:id="@+id/selected_product_image"-->
+<!--                android:layout_marginTop="@dimen/margin_padding_size_medium"-->
+<!--                android:layout_gravity="center"/>-->
+
+<!--        </LinearLayout>-->
+<!--    </RelativeLayout>-->
 
 
     <RelativeLayout
@@ -111,11 +101,16 @@
             android:layout_centerHorizontal="true"
             android:layout_centerInParent="true">
             <ProgressBar
-                android:layout_width="150dp"
-                android:layout_height="150dp"/>
+                android:layout_gravity="center"
+                android:progressBackgroundTint="@color/colorPrimaryDark2"
+                android:layout_width="120dp"
+                android:layout_height="120dp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                android:textAlignment="center"
                 android:text="Loading your model..."/>
         </LinearLayout>
     </RelativeLayout>
@@ -128,153 +123,267 @@
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab_take_photo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/margin_padding_size_medium"
+            android:layout_width="@dimen/fab_size_ar"
+            android:layout_height="@dimen/fab_size_ar"
+            android:layout_marginLeft="@dimen/margin_padding_size_large"
+            android:layout_marginBottom="@dimen/margin_padding_bottom_fabs"
             app:borderWidth="0dp"
             app:backgroundTint="@color/semiTransparentBlack"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
+            app:fabCustomSize="@dimen/fab_size_ar"
+            app:tint="@color/white"
             app:elevation="0dp"
             app:pressedTranslationZ="0dp"
-            app:srcCompat="@drawable/ic_photo_camera_24px"/>
+            app:srcCompat="@drawable/ic_zep_camera_icon"/>
+
+        <ImageButton
+            android:id="@+id/show_floor_button"
+            android:layout_width="56dp"
+            android:layout_height="48dp"
+            android:background="@drawable/round_semitransparent_button"
+            android:src="@drawable/ic_zep_9dots"
+            android:tint="@color/white"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/margin_padding_bottom_fabs"
+            android:layout_centerInParent="true"
+            android:gravity="center" />
+
+
+        <!--        <Button-->
+<!--            android:layout_width="56dp"-->
+<!--            android:layout_height="48dp"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            android:layout_marginBottom="@dimen/margin_padding_bottom_fabs"-->
+<!--            android:layout_centerInParent="true"-->
+<!--            android:gravity="center"-->
+<!--            app:iconPadding="0dp"-->
+<!--            app:iconTint="@color/white"-->
+<!--            app:icon="@drawable/ic_photo_camera_24px"-->
+<!--            android:background="#00000000"-->
+<!--            android:backgroundTint="@color/semiTransparentBlack"-->
+<!--            app:cornerRadius="8dp"-->
+<!--            app:strokeWidth="0dp"/>-->
+
+
+<!--        <com.google.android.material.switchmaterial.SwitchMaterial-->
+<!--            android:id="@+id/show_floor_switch"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="@dimen/margin_padding_size_large"-->
+<!--            android:scrollbarSize="@dimen/margin_padding_size_large"-->
+<!--            android:checked="true"-->
+<!--            android:text="Show Floor"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            android:layout_centerInParent="true"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"/>-->
+
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab_additem"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/margin_padding_size_medium"
+            android:layout_width="@dimen/fab_size_ar"
+            android:layout_height="@dimen/fab_size_ar"
+            android:layout_marginRight="@dimen/margin_padding_size_large"
+            android:layout_marginBottom="@dimen/margin_padding_bottom_fabs"
             app:borderWidth="0dp"
             app:backgroundTint="@color/semiTransparentBlack"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
+            app:fabCustomSize="@dimen/fab_size_ar"
+            app:tint="@color/white"
             app:elevation="0dp"
             app:pressedTranslationZ="0dp"
-            app:srcCompat="@drawable/ic_add_24px"/>
+            app:srcCompat="@drawable/ic_add_24px" />
     </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/selected_model_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <LinearLayout
+            android:id="@+id/selected_model_card"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/margin_padding_size_small"
+            android:layout_marginTop="@dimen/margin_padding_size_large"
+            android:layout_marginStart="@dimen/margin_padding_size_medium"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
             android:orientation="vertical">
 
-            <ImageView
-                android:layout_width="120dp"
-                android:layout_height="80dp"
-                android:id="@+id/selected_model_image"
-                android:src="@drawable/ic_photo_camera_24px"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentLeft="true"/>
-
-
-            <LinearLayout
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/margin_padding_size_small"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/selected_model_line1"
-                    android:text="Selected sofa"
-                    android:textAppearance="?attr/textAppearanceSubtitle1"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/selected_model_line2"
-                    android:text="More Description"
-                    android:textAppearance="?attr/textAppearanceSubtitle2"/>
-            </LinearLayout>
+                android:backgroundTint="@color/transparent"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="0dp">
+            <ImageView
+                android:layout_width="88dp"
+                android:layout_height="72dp"
+                android:scaleType="fitXY"
+                android:id="@+id/selected_model_image"
+                android:src="@drawable/ic_photo_camera_24px" />
+            </com.google.android.material.card.MaterialCardView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/selected_model_line1"
+                android:paddingBottom="@dimen/margin_padding_size_small"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:text="Selected sofa"
+                android:textAppearance="?attr/textAppearanceCaption"/>
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
             android:orientation="vertical"
-            android:layout_margin="@dimen/margin_padding_size_small">
-            <com.google.android.material.button.MaterialButton
+            android:layout_marginTop="@dimen/margin_padding_size_large"
+            android:layout_marginStart="@dimen/margin_padding_size_medium"
+            android:layout_toRightOf="@id/selected_model_card"
+            android:layout_toLeftOf="@id/object_delete_button">
 
-                android:id="@+id/object_delete_button"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:backgroundTint="@color/semiTransparentBlack"
-                android:background="@android:color/transparent"
-                android:text="Delete" />
-
-            <LinearLayout
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
+                android:textColor="@color/white"
+                android:textAlignment="textStart"
+                android:text="Size:"/>
 
-
-                <com.google.android.material.chip.ChipGroup
-                    android:layout_width="wrap_content"
+<!--            <com.warkiz.widget.IndicatorStayLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content">-->
+                <com.warkiz.widget.IndicatorSeekBar
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/model_size_chipgroup"
-                    app:singleLine="true"
-                    app:singleSelection="true">
-                    <com.google.android.material.chip.Chip
-                        style="@style/Widget.MaterialComponents.Chip.Choice"
-                        android:id="@+id/chip_small"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:backgroundTint="@color/semiTransparentBlack"
-                        android:text="Small" />
+                    android:layout_marginTop="@dimen/margin_padding_size_medium"
+                    android:id="@+id/selected_model_scale_seekbar"
+                    app:isb_ticks_count="50"
+                    app:isb_seek_smoothly="true"
+                    app:isb_max="120"
+                    app:isb_min="60"
+                    app:isb_progress="70"
+                    app:isb_thumb_adjust_auto="false"
+                    app:isb_show_indicator="rounded_rectangle"
+                    app:isb_track_progress_color="@color/textColorPrimary"
+                    app:isb_indicator_color="@color/semiTransparentBlack"
+                    app:isb_indicator_text_color="@color/white"
+                    app:isb_thumb_color="@color/textColorPrimary"/>
+<!--            </com.warkiz.widget.IndicatorStayLayout>-->
 
-                    <com.google.android.material.chip.Chip
-                        style="@style/Widget.MaterialComponents.Chip.Choice"
-                        android:id="@+id/chip_real"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:backgroundTint="@color/semiTransparentBlack"
-                        android:text="Real" />
+            <Button
+                android:id="@+id/selected_model_truesize_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_padding_size_small"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/semiTransparentBlack"
+                android:radius="8dp"
+                style="?android:attr/borderlessButtonStyle"
+                android:textColor="@color/white"
+                android:text="Reset"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                android:textAllCaps="false"/>
 
-                    <com.google.android.material.chip.Chip
-                        style="@style/Widget.MaterialComponents.Chip.Choice"
-                        android:id="@+id/chip_large"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:backgroundTint="@color/semiTransparentBlack"
-                        android:text="Large" />
-
-                </com.google.android.material.chip.ChipGroup>
-
-<!--                <com.google.android.material.button.MaterialButton-->
-<!--                    android:id="@+id/object_smaller_button"-->
-<!--                    android:layout_width="56dp"-->
-<!--                    android:layout_height="48dp"-->
-<!--                    android:layout_gravity="left"-->
-<!--                    android:text="Realsize" />-->
-
-<!--                <com.google.android.material.button.MaterialButton-->
-<!--                    android:id="@+id/object_realsize_button"-->
-<!--                    android:layout_width="56dp"-->
-<!--                    android:layout_height="48dp"-->
-<!--                    android:layout_gravity="right"-->
-<!--                    android:text="Real size" />-->
-
-            </LinearLayout>
-
+<!--            <com.google.android.material.button.MaterialButton-->
+<!--                android:id="@+id/selected_model_truesize_button"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="@dimen/margin_padding_size_medium"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:backgroundTint="@color/semiTransparentBlack"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:text="Reset"/>-->
         </LinearLayout>
 
-
+<!--        <ImageView-->
+<!--            android:id="@+id/object_delete_button"-->
+<!--            android:layout_width="48dp"-->
+<!--            android:layout_height="48dp"-->
+<!--            android:src="@drawable/ic_delete_forever_24px"-->
+<!--            android:layout_alignParentRight="true"/>-->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/object_delete_button"
+            android:layout_width="@dimen/fab_size_ar"
+            android:layout_height="@dimen/fab_size_ar"
+            android:layout_marginTop="@dimen/margin_padding_size_large"
+            android:layout_marginEnd="@dimen/margin_padding_size_medium"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            app:fabCustomSize="@dimen/fab_size_ar"
+            app:borderWidth="0dp"
+            app:backgroundTint="@color/semiTransparentBlack"
+            app:tint="@color/white"
+            app:elevation="0dp"
+            app:pressedTranslationZ="0dp"
+            app:srcCompat="@drawable/ic_zep_recycle_bin"/>
     </RelativeLayout>
 
 
 
-    <!--    <TextView-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:id="@+id/test_text"-->
-<!--        android:textSize="20dp"-->
-<!--        android:text="Just testing"-->
-<!--        android:layout_gravity="center"/>-->
+    <RelativeLayout
+        android:id="@+id/selected_product_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
+        <LinearLayout
+            android:id="@+id/selected_product_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_padding_size_large"
+            android:layout_marginStart="@dimen/margin_padding_size_medium"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:orientation="vertical">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/transparent"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="0dp">
+            <ImageView
+                android:layout_width="88dp"
+                android:layout_height="72dp"
+                android:scaleType="fitXY"
+                android:id="@+id/selected_product_image"
+                android:src="@drawable/ic_photo_camera_24px" />
+            </com.google.android.material.card.MaterialCardView>
+
+<!--            <ImageView-->
+<!--                android:layout_width="88dp"-->
+<!--                android:layout_height="72dp"-->
+<!--                android:id="@+id/selected_product_image"-->
+<!--                android:src="@drawable/ic_photo_camera_24px" />-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/selected_product_line1"
+                android:paddingBottom="@dimen/margin_padding_size_small"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:text="Selected sofa large text"
+                android:textAppearance="?attr/textAppearanceCaption"/>
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/selected_product_instruction_text"
+            android:textColor="@color/white"
+            android:layout_gravity="center_vertical"
+            android:textAlignment="center"
+            android:text="Tap on the surface to add"
+            android:layout_toRightOf="@id/selected_product_card"
+            android:paddingBottom="@dimen/margin_padding_size_large"
+            android:layout_centerVertical="true"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"/>
+
+    </RelativeLayout>
 </FrameLayout>

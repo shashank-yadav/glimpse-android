@@ -6,53 +6,78 @@
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/hm_product_card"
-    android:layout_width="@dimen/hm_product_card_width"
-    android:layout_height="wrap_content"
-    android:clickable="true"
-    android:focusable="true"
-    android:layout_margin="@dimen/margin_padding_size_medium"
-    style="@style/Widget.MaterialComponents.CardView"
-    android:outlineAmbientShadowColor="@color/colorPrimaryDark"
-    android:layout_gravity="center"
-    app:cardElevation="@dimen/cardview_default_elevation"
-    app:cardPreventCornerOverlap="true">
-
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_padding_size_medium"
+        android:layout_gravity="center"
         android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/hm_product_card_image"
-            android:layout_width="match_parent"
-            android:adjustViewBounds="true"
-            android:scaleType="fitXY"
-            android:layout_height="@dimen/hm_product_card_image_height"/>
+        <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/hm_product_card"
+            android:layout_width="@dimen/hm_product_card_width"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_gravity="center"
+            android:background="@color/colorBackgroundPrimary"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="0dp"
+            app:cardPreventCornerOverlap="true">
+
+
+            <ImageView
+                android:id="@+id/hm_product_card_image"
+                android:layout_width="match_parent"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:layout_height="@dimen/hm_product_card_image_height"/>
+
+        </com.google.android.material.card.MaterialCardView>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@color/colorBackgroundPrimary"
             android:orientation="vertical">
             <TextView
                 android:id="@+id/hm_product_card_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/shr_product_title"
-                android:textAlignment="center"
+                android:textAlignment="textStart"
+                android:paddingLeft="@dimen/margin_padding_size_small"
+                android:paddingRight="@dimen/margin_padding_size_small"
+                android:paddingTop="@dimen/margin_padding_size_small"
+                android:paddingBottom="2dp"
+                android:textColor="@android:color/black"
                 android:textAppearance="?attr/textAppearanceSubtitle2" />
+
+            <TextView
+                android:id="@+id/hm_product_card_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/shr_product_title"
+                android:textAlignment="textStart"
+                android:paddingLeft="@dimen/margin_padding_size_small"
+                android:paddingRight="@dimen/margin_padding_size_small"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:textAppearance="?attr/textAppearanceCaption" />
 
             <TextView
                 android:id="@+id/hm_product_card_price"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/margin_padding_size_small"
+                android:paddingRight="@dimen/margin_padding_size_small"
+                android:paddingBottom="@dimen/margin_padding_size_small"
                 android:text="@string/shr_product_description"
-                android:textAlignment="center"
+                android:textAlignment="textStart"
+                android:textColor="@color/colorPrimaryDark2"
                 android:textAppearance="?attr/textAppearanceBody2" />
         </LinearLayout>
     </LinearLayout>
-
-</com.google.android.material.card.MaterialCardView>
 </LinearLayout>

@@ -1,5 +1,6 @@
 package com.example.homemaker.LoginFragments
 
+import `in`.aabhasjindal.otptextview.OtpTextView
 import android.content.Context
 import android.os.Bundle
 import android.util.Log
@@ -25,6 +26,7 @@ class PhoneVerificationFragment: Fragment(){
     lateinit var mAuth: FirebaseAuth
     private lateinit var verificationId: String
     private lateinit var phoneNumber: String
+    private lateinit var otpView: OtpTextView
 
 
     private var mCallback: ActivityCallback? = null
@@ -36,6 +38,9 @@ class PhoneVerificationFragment: Fragment(){
         val view = inflater.inflate(R.layout.hm_phone_verification, container, false)
         val editTextVerificationCode = view.login_phone_otp
         phoneNumber = mCallback!!.getPhoneNumber()
+
+        val otpMessageTextView = view.otp_message_line1
+        otpMessageTextView.text = "We've sent an otp to +91-$phoneNumber"
 
         mCallbacks_phone = object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
             override fun onVerificationCompleted(credential: PhoneAuthCredential) {
@@ -58,14 +63,23 @@ class PhoneVerificationFragment: Fragment(){
         sendVerificationCode(phoneNumber)
 //        Toast.makeText(context, phoneNumber.toString(), Toast.LENGTH_LONG ).show()
 
+        otpView = view.login_phone_otp
+
         view.login_phone_otp_button.setOnClickListener {
-            val code = editTextVerificationCode.text.toString().trim()
-            if( code.isEmpty() || code.length<6){
-                editTextVerificationCode.error = "Enter a valid otp"
-                editTextVerificationCode.requestFocus()
-            }else{
+//            val code = editTextVerificationCode.text.toString().trim()
+            val code = otpView.otp
+            if(code != null && code.length == 6){
                 verifyCode(code)
+            }else{
+                otpView.showError()
+                Toast.makeText(context, "Enter Valid OTP", Toast.LENGTH_LONG).show()
             }
+//            if( code.isEmpty() || code.length<6){
+//                editTextVerificationCode.error = "Enter a valid otp"
+//                editTextVerificationCode.requestFocus()
+//            }else{
+//                verifyCode(code)
+//            }
         }
 
         return view
@@ -89,6 +103,7 @@ class PhoneVerificationFragment: Fragment(){
     private fun signInWithCredential(credential: PhoneAuthCredential) {
         mAuth.signInWithCredential(credential).addOnCompleteListener{
             if(it.isSuccessful){
+                otpView.showSuccess()
                 Toast.makeText(context, "Login Successful", Toast.LENGTH_LONG).show()
 //                mCallback!!.openUsername()
 

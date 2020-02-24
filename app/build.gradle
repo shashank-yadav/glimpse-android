@@ -74,6 +74,11 @@ dependencies {
     // If you're using Kotlin (and therefore, kapt), use kapt instead of annotationProcessor
     kapt 'com.github.bumptech.glide:compiler:4.11.0'
 
+    // IndicatorSeekBar
+    implementation 'com.github.warkiz.widget:indicatorseekbar:2.1.2'
+
+    // otp text
+    implementation 'com.github.aabhasr1:OtpView:v1.1.2-ktx'
 
 
 //    implementation 'com.android.support:support-v4:28.0.0'
