@@ -11,7 +11,7 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        tools:context="com.example.homemaker.MainActivity"
+        tools:context="com.glimpse.app.MainActivity"
         android:background="@color/loginPageBackgroundColor">
 
         <FrameLayout

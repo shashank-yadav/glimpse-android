@@ -6,7 +6,7 @@ apply plugin: 'kotlin-kapt'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.example.homemaker"
+        applicationId "com.glimpse.app"
         minSdkVersion 24
         targetSdkVersion 28
         resConfigs "en" // And any other languages you support

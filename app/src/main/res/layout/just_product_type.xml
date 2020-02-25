@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:background="#fdfdfc"
-        tools:context="com.example.homemaker.MainActivity">
+        tools:context="com.glimpse.app.MainActivity">
 
         <com.google.android.material.chip.ChipGroup
             android:id="@+id/chipGroup"

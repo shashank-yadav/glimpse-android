@@ -120,7 +120,7 @@
 
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-                <com.example.homemaker.Helpers.CustomTabLayout
+                <com.glimpse.app.Helpers.CustomTabLayout
                     android:id="@+id/hm_bottomsheet_tabs"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

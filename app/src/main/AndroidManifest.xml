@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.homemaker">
+    package="com.glimpse.app">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -18,14 +18,14 @@
         android:label="@string/shr_app_name"
         android:roundIcon="@mipmap/ic_glimpse_launcher_round"
         android:supportsRtl="true"
-        android:name="com.example.homemaker.application.ShrineApplication"
+        android:name="com.glimpse.app.application.ShrineApplication"
         android:theme="@style/Theme.Shrine">
 
         <meta-data
             android:name="com.google.ar.core"
             android:value="required" />
 
-        <activity android:name="com.example.homemaker.SplashActivity">
+        <activity android:name="com.glimpse.app.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -34,7 +34,7 @@
         </activity>
 
         <activity
-            android:name=".MainActivity"
+            android:name="com.glimpse.app.MainActivity"
             android:configChanges="orientation|screenSize|keyboardHidden">
             <intent-filter android:label="testFilterLabel">
                 <action android:name="android.intent.action.VIEW" />
@@ -42,14 +42,12 @@
                 <category android:name="android.intent.category.BROWSABLE" />
                 <!-- Accepts URIs that begin with "http://www.example.com/gizmos” -->
                 <data android:scheme="http"
-                    android:host="www.glimplsereality.co"/>
+                    android:host="www.glimpsereality.co"/>
                 <!-- note that the leading "/" is required for pathPrefix-->
                 <!-- Accepts URIs that begin with "example://gizmos” -->
                 <data android:scheme="example"
                     android:host="glimpse" />
             </intent-filter>
-
-
         </activity>
     </application>
 </manifest>

@@ -24,7 +24,7 @@
 
 
 <!--        <androidx.viewpager.widget.ViewPager-->
-        <com.example.homemaker.Helpers.NonSwipeableViewPager
+        <com.glimpse.app.Helpers.NonSwipeableViewPager
             android:id="@+id/hm_vpager"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
