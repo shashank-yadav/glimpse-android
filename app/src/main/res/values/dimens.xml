@@ -31,7 +31,7 @@
 
 
     <!-- Fab size on the AR screen    -->
-    <dimen name="fab_size_ar">44dp</dimen>
+    <dimen name="fab_size_ar">48dp</dimen>
     <dimen name="margin_padding_bottom_fabs">40dp</dimen>
     <dimen name="margin_padding_bottom_button">40dp</dimen>
 

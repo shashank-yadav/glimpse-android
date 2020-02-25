@@ -1,6 +1,7 @@
 package com.glimpse.app.ArFragments
 
 import android.content.Context
+import android.content.Intent
 import android.graphics.Bitmap
 import android.media.AudioManager
 import android.media.MediaActionSound
@@ -139,9 +140,9 @@ class HmArFragment : ArFragment(){
             }
         }
 
-        containerView.fab_take_photo.setOnClickListener {
-            takePhoto()
-        }
+//        containerView.fab_take_photo.setOnClickListener {
+//            takePhoto()
+//        }
 
         return containerView
     }
@@ -216,7 +217,6 @@ class HmArFragment : ArFragment(){
                 title,
                 "Image of $title"
         )
-        Toast.makeText(this.context, "Saved Image successfully as: $savedImageURL", Toast.LENGTH_LONG).show()
     }
 
     override fun onUpdate(frameTime: FrameTime?) {
@@ -248,7 +248,6 @@ class HmArFragment : ArFragment(){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProviders.of(this.activity!!).get(StateViewModel::class.java)
-//        progressDialog = ProgressDialog(this.context)
 
         this.arSceneView.scene.addOnUpdateListener { frameTime ->
             this.onUpdate(frameTime)

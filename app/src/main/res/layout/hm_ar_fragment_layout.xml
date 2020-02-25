@@ -122,7 +122,7 @@
         android:layout_height="match_parent">
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab_take_photo"
+            android:id="@+id/show_floor_button"
             android:layout_width="@dimen/fab_size_ar"
             android:layout_height="@dimen/fab_size_ar"
             android:layout_marginLeft="@dimen/margin_padding_size_large"
@@ -135,19 +135,19 @@
             app:tint="@color/white"
             app:elevation="0dp"
             app:pressedTranslationZ="0dp"
-            app:srcCompat="@drawable/ic_zep_camera_icon"/>
+            app:srcCompat="@drawable/ic_zep_9dots"/>
 
-        <ImageButton
-            android:id="@+id/show_floor_button"
-            android:layout_width="56dp"
-            android:layout_height="48dp"
-            android:background="@drawable/round_semitransparent_button"
-            android:src="@drawable/ic_zep_9dots"
-            android:tint="@color/white"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="@dimen/margin_padding_bottom_fabs"
-            android:layout_centerInParent="true"
-            android:gravity="center" />
+<!--        <ImageButton-->
+<!--            android:id="@+id/show_floor_button"-->
+<!--            android:layout_width="56dp"-->
+<!--            android:layout_height="48dp"-->
+<!--            android:background="@drawable/round_semitransparent_button"-->
+<!--            android:src="@drawable/ic_zep_9dots"-->
+<!--            android:tint="@color/white"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            android:layout_marginBottom="@dimen/margin_padding_bottom_fabs"-->
+<!--            android:layout_centerInParent="true"-->
+<!--            android:gravity="center" />-->
 
 
         <!--        <Button-->

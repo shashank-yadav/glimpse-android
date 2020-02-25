@@ -10,10 +10,55 @@
       "client_info": {
         "mobilesdk_app_id": "1:210951132012:android:24d33db682354652e31949",
         "android_client_info": {
+          "package_name": "com.example.homemaker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "210951132012-kh3qk29irvfq4r9rn939ie6aq83dkl7j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.homemaker",
+            "certificate_hash": "bcbc79a0cb88f9a5ac6d32a78b31ad1a7f28279c"
+          }
+        },
+        {
+          "client_id": "210951132012-jkid2554qrfh46opoelbkflqmi11e8q2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdW2ru5c8FJTuNySlTmIqYMoiB2FEm2fM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "210951132012-jkid2554qrfh46opoelbkflqmi11e8q2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:210951132012:android:bea5dcbbdb1cc92ce31949",
+        "android_client_info": {
           "package_name": "com.glimpse.app"
         }
       },
       "oauth_client": [
+        {
+          "client_id": "210951132012-4cjerbpg52nunr01knmt2p4ggnnrkvpm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.glimpse.app",
+            "certificate_hash": "bcbc79a0cb88f9a5ac6d32a78b31ad1a7f28279c"
+          }
+        },
         {
           "client_id": "210951132012-jkid2554qrfh46opoelbkflqmi11e8q2.apps.googleusercontent.com",
           "client_type": 3
