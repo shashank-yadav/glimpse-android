@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
@@ -90,6 +91,7 @@ class HmStoresViewFragment: Fragment(){
                     // go to new fragment here
 //                    val parent = parentFragment
 //                    parentFragment!!.childFragmentManager.beginTransaction().replace(R.id.container_fragment_framelayout, HmProductFragment(store)).commit()
+//                    throw RuntimeException("Test Crash")
                     analyticsHelper.logSelectContent("selectStore", store.id!!, "Card")
                     fragmentManager!!.beginTransaction().replace(R.id.container_fragment_framelayout, HmProductFragmentFactory.newInstance(store)).addToBackStack("").commit()
                     viewModel.state.storeSelected = store

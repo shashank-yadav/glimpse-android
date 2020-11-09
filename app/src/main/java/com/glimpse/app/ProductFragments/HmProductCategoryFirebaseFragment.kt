@@ -83,8 +83,8 @@ class HmProductCategoryFirebaseFragment : Fragment(){
         // Init Paging Configuration
         val config = PagedList.Config.Builder()
                 .setEnablePlaceholders(false)
-                .setPrefetchDistance(2)
-                .setPageSize(10)
+                .setPrefetchDistance(6)
+                .setPageSize(20)
                 .build()
 
         // Init Adapter Configuration
