@@ -12,6 +12,8 @@
 <!--![Optional Text](/images/glimpse_logo.webp)-->
 
 ## About
+> You can read the [medium post](https://shashank7-iitd.medium.com/visualizing-stuff-using-augmented-reality-7a4979c71083) to get started
+
 This repository contains working code for [Glimpse](https://play.google.com/store/apps/details?id=com.glimpse.app). You can find the app on [Google Playstore](https://play.google.com/store/apps/details?id=com.glimpse.app) and take it for a test drive. The app can be used to have a look at 3D models of furniture or other home appliances.
 It's a fully functional app with following features:
 1. Complete phone based authentication workflow based on Firebase authentication
